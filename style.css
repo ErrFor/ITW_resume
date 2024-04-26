@@ -7,6 +7,7 @@ body{
     text-align: center;
     margin: 0;
     padding: 0;
+    background-color: rgb(246, 246, 244);
 }
 
 #navContainer {
@@ -86,7 +87,7 @@ footer{
     align-items: center; /* Центрируем содержимое по горизонтали */
     height: 100vh;
     font-size: 2rem;
-    background-image: url('bg.jpg');
+    background-image: url('img/about_bg.jpg');
 }
 
 #about h2{
@@ -138,7 +139,7 @@ footer{
     flex-direction: column;
     align-items: center;
     text-align: center; /* Центрирует текст внутри блоков */
-    background-image: url('skills_bg.jpg');
+    background-image: url('img/skills_bg.jpg');
 }
   
 #skills h2 {
@@ -146,7 +147,7 @@ footer{
 }
   
 .skills-slider {
-    width: 40%; /* Определяет ширину слайдера */
+    width: 50%; /* Определяет ширину слайдера */
     height: 70vh;
     padding: 20px; /* Отступ внутри блока, чтобы контент не прилипал к границам */
     background: white; /* Фон для слайдера */
@@ -180,7 +181,7 @@ footer{
 }
   
 #skills i{
-    font-size: 20px;
+    font-size: 35px;
     transition: transform 0.5s;
 }
 
@@ -242,17 +243,19 @@ footer{
 .toggle {
     cursor: pointer;
     color: black;
-    background-color: #f8f9fa; /* Цвет фона кнопки */
+    font-weight: bold;
+    background-color: white; /* Цвет фона кнопки */
     border: 1px solid #ddd; /* Граница кнопки */
     padding: 10px 20px; /* Внутренний отступ кнопки */
     margin-top: 20px; /* Отступ сверху */
     border-radius: 5px; /* Скругление углов */
-    transition: background-color 0.3s, color 0.3s; /* Анимация для цвета и фона */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Анимация для цвета и фона */
 }
 
 .toggle:hover {
-    background-color: #e2e6ea; /* Цвет фона при наведении */
+    background-color: #ffa500; /* Цвет фона при наведении */
     color: #495057; /* Цвет текста при наведении */
+    transform: scale(1.1); /* Увеличение размера кнопки при наведении */
 }
   
 #projects::before {
@@ -342,7 +345,7 @@ button.next {
     top: 50%;
     transform: translateY(-50%);
     color: black;
-    background-color: white; /* Цвет фона кнопки */
+    background-color: rgb(246, 246, 244); /* Цвет фона кнопки */
     border: none;
     cursor: pointer;
     padding: 10px;
@@ -417,7 +420,7 @@ button.next {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url('brain.webp'); /* Ваше фоновое изображение */
+    background-image: url('img/brain.webp'); /* Ваше фоновое изображение */
     background-size: contain;
     background-position: center;
     filter: none; /* Изначально без размытия */
@@ -454,7 +457,7 @@ button.next {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1.4rem; /* Или ваш размер */
+    font-size: 1.7rem; /* Или ваш размер */
     font-weight: bold;
     color: black;
     visibility: hidden; /* Изначально текст невидим */
@@ -630,7 +633,7 @@ button.next {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .left-side {
         justify-content: flex-start;
         width: 50%;
@@ -667,7 +670,7 @@ button.next {
     #about {
         font-size: 1rem; /* Уменьшаем базовый размер шрифта */
         padding: 20px; /* Добавляем паддинг для всего блока */
-        /* Другие стили, если нужно */
+        background-position: center;
     }
 
     #about h2 {
@@ -681,16 +684,8 @@ button.next {
         margin-bottom: 50px; /* Уменьшаем отступ снизу, чтобы экономить место */
     }
 
-    .hidden {
-        font-size: 1rem; /* Уменьшаем размер шрифта для скрытого текста */
-    }
-
-    .hidden a {
-        font-size: 1rem; /* Уменьшаем размер шрифта для ссылок */
-    }
-
     .skills-slider {
-        width: 80%; /* Для мобильных устройств занимает всю ширину */
+        width: 100%; /* Для мобильных устройств занимает всю ширину */
         padding: 0; /* Меньший отступ */
         margin-top: 0; /* Убираем верхний отступ для мобильных */
         margin-bottom: 0; /* Убираем нижний отступ для мобильных */
@@ -707,10 +702,15 @@ button.next {
     }
 
     /* Стили для уменьшения размера иконок и текста в навыках, если нужно */
-    #skills i, #skills img {
+    #skills i {
         font-size: 16px; /* Уменьшаем размер иконок */
     }
   
+    #skills img{
+        width: 16px; /* Уменьшаем размер иконок */
+        height: 16px;
+    }
+
     .skill p {
         font-size: 0.9rem; /* Уменьшаем размер текста описания навыка */
     }
@@ -720,6 +720,11 @@ button.next {
         transform: translateY(0); /* Изменяем анимацию для мобильных устройств */
         opacity: 1; /* Сделать текст видимым */
         animation: slideIn 0.5s ease forwards; /* Применяем новую анимацию на мобильных устройствах */
+    }
+
+    .background-blur {
+        background-repeat: no-repeat;
+        background-color: rgb(248, 248, 248);/* rgb(247, 243, 243) */
     }
 
     .brain-text {
@@ -749,9 +754,9 @@ button.next {
     }
 
     #top-left:hover .brain-text { transform: translate(-300%, -300%); }
-    #top-right:hover .brain-text { transform: translate(300%, -300%); }
+    #top-right:hover .brain-text { transform: translate(350%, -350%); }
     #bottom-left:hover .brain-text { transform: translate(-300%, 300%); }
-    #bottom-right:hover .brain-text { transform: translate(300%, 300%); }
+    #bottom-right:hover .brain-text { transform: translate(350%, 350%); }
 
     .contact-content {
         flex-direction: column; /* Ставим элементы в столбик */
@@ -784,10 +789,260 @@ button.next {
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 991px) {
-    
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .left-side {
+        justify-content: flex-start;
+        width: 50%;
+    }
+
+    .right-side {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Располагаем меню непосредственно под навигационной панелью */
+        width: 100%;
+        background-color: #333;
+    }
+
+    .right-side.active {
+        display: flex;
+    }
+
+    .nav-item {
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid #444;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-bars {
+        display: block;
+    }
+
+    #about {
+        font-size: 1rem; /* Уменьшаем базовый размер шрифта */
+        padding: 20px; /* Добавляем паддинг для всего блока */
+        background-position: center;
+    }
+
+    #about h2 {
+        font-size: 2rem; /* Уменьшаем размер заголовка для мобильных */
+    }
+
+    .typing,
+    #hiddenText {
+        font-size: 1.3rem; /* Уменьшаем размер шрифта для текста */
+        max-width: 100%; /* Позволяем тексту занимать всю ширину блока */
+        margin-bottom: 50px; /* Уменьшаем отступ снизу, чтобы экономить место */
+    }
+
+    .skills-slider {
+        width: 100%; /* Для мобильных устройств занимает всю ширину */
+        padding: 0; /* Меньший отступ */
+        margin-top: 0; /* Убираем верхний отступ для мобильных */
+        margin-bottom: 0; /* Убираем нижний отступ для мобильных */
+        overflow: hidden;
+    }
+  
+    .skill {
+        width: calc(50% - 10px); /* Навыки занимают всю ширину на мобильных */
+        margin: 10px 0; /* Устанавливаем вертикальные отступы для мобильных */
+    }
+  
+    .skills-section h3 {
+        font-size: 1.5rem; /* Уменьшаем размер шрифта для заголовков секций */
+    }
+
+    /* Стили для уменьшения размера иконок и текста в навыках, если нужно */
+    #skills i {
+        font-size: 30px; /* Уменьшаем размер иконок */
+    }
+
+    #skills img{
+        width: 30px; /* Уменьшаем размер иконок */
+        height: 30px;
+    }
+  
+    .skill p {
+        font-size: 1rem; /* Уменьшаем размер текста описания навыка */
+    }
+
+    .brain-text {
+        font-size: 4rem; /* Уменьшение размера иконок */
+    }
+
+    .brain-hidden-text {
+        font-size: 1.6rem; /* Уменьшение размера текста */
+        transform: translate(-50%, -50%); /* Центрирование текста */
+        padding: 10px; /* Добавление отступов для текста */
+    }
+
+    #top-left .brain-text {
+        /* Поднимаем верхние иконки немного вверх для лучшего размещения */
+        position: absolute;
+        top: 35%; 
+        left: 25%;/* Настроить в соответствии с вашим дизайном */
+    }
+
+    #top-right .brain-text{
+        position: absolute;
+        top: 35%; 
+        right: 37%;/* Настроить в соответствии с вашим дизайном */
+    }
+
+    #bottom-left .brain-text {
+        /* Опускаем нижние иконки немного вниз для лучшего размещения */
+        position: absolute;
+        top: 30%;
+        left: 30%; /* Настроить в соответствии с вашим дизайном */
+    }
+
+    #bottom-right .brain-text{
+        position: absolute;
+        top: 30%;
+        right: 38%; /* Настроить в соответствии с вашим дизайном */
+    }
+
+    #top-left:hover .brain-text { transform: translate(-400%, -400%); }
+    #top-right:hover .brain-text { transform: translate(450%, -450%); }
+    #bottom-left:hover .brain-text { transform: translate(-400%, 400%); }
+    #bottom-right:hover .brain-text { transform: translate(450%, 450%); }
+
+    .contact-content {
+        flex-direction: column; /* Ставим элементы в столбик */
+        align-items: center; /* Центрируем элементы по горизонтали */
+        padding: 0;
+    }
+
+    .contact-form,
+    .contact-icons {
+        max-width: none; /* Отменяем ограничения по максимальной ширине */
+        flex: none; /* Убираем flex-basis, позволяя элементам занимать необходимое им пространство */
+    }
+
+    .contact-form {
+        width: 80%; /* Форма теперь занимает всю ширину */
+    }
+
+    .contact-form textarea {
+        width: calc(100% - 10px); /* Вычитаем паддинги */
+    }
+
+    .contact-icons {
+        padding-top: 20px; /* Добавляем немного места сверху для разделения */
+        justify-content: space-around; /* Равномерно распределяем иконки по горизонтали */
+    }
+
+    .contact-icons a {
+        font-size: 4rem; /* Уменьшаем размер иконок */
+        padding-left: 20px; /* Убираем левый паддинг */
+    }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    
+    .skills-slider {
+        width: 80%; /* Для мобильных устройств занимает всю ширину */
+        padding: 0; /* Меньший отступ */
+        margin-top: 0; /* Убираем верхний отступ для мобильных */
+        margin-bottom: 0; /* Убираем нижний отступ для мобильных */
+        overflow: hidden;
+    }
+  
+    .skill {
+        width: calc(50% - 10px); /* Навыки занимают всю ширину на мобильных */
+        margin: 10px 0; /* Устанавливаем вертикальные отступы для мобильных */
+    }
+  
+    .skills-section h3 {
+        font-size: 1.5rem; /* Уменьшаем размер шрифта для заголовков секций */
+    }
+
+    /* Стили для уменьшения размера иконок и текста в навыках, если нужно */
+    #skills i {
+        font-size: 30px; /* Уменьшаем размер иконок */
+    }
+
+    #skills img {
+        width: 30px; /* Уменьшаем размер иконок */
+        height: 30px;
+    }
+  
+    .skill p {
+        font-size: 1rem; /* Уменьшаем размер текста описания навыка */
+    }
+
+    .brain-text {
+        font-size: 4rem; /* Уменьшение размера иконок */
+    }
+
+    .brain-hidden-text {
+        font-size: 1.6rem; /* Уменьшение размера текста */
+        transform: translate(-50%, -50%); /* Центрирование текста */
+        padding: 10px; /* Добавление отступов для текста */
+    }
+
+    #top-left .brain-text {
+        /* Поднимаем верхние иконки немного вверх для лучшего размещения */
+        position: absolute;
+        top: 35%; 
+        left: 25%;/* Настроить в соответствии с вашим дизайном */
+    }
+
+    #top-right .brain-text{
+        position: absolute;
+        top: 35%; 
+        right: 37%;/* Настроить в соответствии с вашим дизайном */
+    }
+
+    #bottom-left .brain-text {
+        /* Опускаем нижние иконки немного вниз для лучшего размещения */
+        position: absolute;
+        top: 30%;
+        left: 30%; /* Настроить в соответствии с вашим дизайном */
+    }
+
+    #bottom-right .brain-text{
+        position: absolute;
+        top: 30%;
+        right: 38%; /* Настроить в соответствии с вашим дизайном */
+    }
+
+    #top-left:hover .brain-text { transform: translate(-400%, -400%); }
+    #top-right:hover .brain-text { transform: translate(450%, -450%); }
+    #bottom-left:hover .brain-text { transform: translate(-400%, 400%); }
+    #bottom-right:hover .brain-text { transform: translate(450%, 450%); }
+
+    .contact-content {
+        flex-direction: column; /* Ставим элементы в столбик */
+        align-items: center; /* Центрируем элементы по горизонтали */
+        padding: 0;
+    }
+
+    .contact-form,
+    .contact-icons {
+        max-width: none; /* Отменяем ограничения по максимальной ширине */
+        flex: none; /* Убираем flex-basis, позволяя элементам занимать необходимое им пространство */
+    }
+
+    .contact-form {
+        width: 80%; /* Форма теперь занимает всю ширину */
+    }
+
+    .contact-form textarea {
+        width: calc(100% - 10px); /* Вычитаем паддинги */
+    }
+
+    .contact-icons {
+        padding-top: 20px; /* Добавляем немного места сверху для разделения */
+        justify-content: space-around; /* Равномерно распределяем иконки по горизонтали */
+    }
+
+    .contact-icons a {
+        font-size: 4rem; /* Уменьшаем размер иконок */
+        padding-left: 20px; /* Убираем левый паддинг */
+    }
 }
