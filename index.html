@@ -13,14 +13,16 @@
     <header>
         <div id="navContainer">
             <nav>
-                <div class="first-row">
+                <div class="left-side">
                     <a href="index.html" class="home"><i class="fa-solid fa-house"></i></i></a>
-                    <a class="nav-bars"><i class="fa-solid fa-bars"></i></a>
                 </div>
-                <a class="nav-item" href="#skills">Skills</a>
-                <a class="nav-item" href="#projects">Projects</a>
-                <a class="nav-item" href="#interests">Interests</a>
-                <a class="nav-item" href="#contact">Contact</a>
+                <div class="right-side">
+                    <a class="nav-item" href="#skills">Skills</a>
+                    <a class="nav-item" href="#projects">Projects</a>
+                    <a class="nav-item" href="#interests">Interests</a>
+                    <a class="nav-item" href="#contact">Contact</a>
+                </div>
+                <a class="nav-bars"><i class="fa-solid fa-bars"></i></a>
             </nav>
         </div>
     </header>
@@ -395,6 +397,28 @@
                 thankYouMessage.style.display = 'none'; // Скрываем сообщение через 5 секунд
             }, 25000);
         });
+
+        // Убедитесь, что DOM полностью загружен перед привязкой обработчиков
+        document.addEventListener('DOMContentLoaded', function() {
+            var navToggle = document.querySelector('.nav-bars');
+            var navMenu = document.querySelector('.right-side');
+            var content = document.querySelector('main');
+
+            // При клике на гамбургер-иконку меню переключает класс 'active'
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                // Рассчитываем высоту открытого меню
+                var menuHeight = navMenu.offsetHeight;
+
+                // Если меню стало активным, добавляем паддинг, иначе убираем
+                if (navMenu.classList.contains('active')) {
+                    content.style.paddingTop = menuHeight + 'px';
+                } else {
+                    content.style.paddingTop = '0px';
+                }
+            });
+        });
+
 
 
     </script>

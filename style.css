@@ -15,10 +15,8 @@ body{
     width: 100%; /*Ширина контейнера, чтобы он занимал всю ширину страницы*/
     background-color: #333; /*Задаем фон, чтобы текст не наезжал на контент при прокрутке*/
     z-index: 3; /*Устанавливаем z-index, чтобы навигация была поверх других элементов*/
-    padding: 0 20px; /* Добавляем немного отступа слева и справа */
-    height: 60px; /* Задаем высоту для навигационного контейнера */
-    justify-content: center;
-    text-align: right;
+    padding: 10px 0; /* Добавляем немного отступа слева и справа */
+    height: 5%; /* Задаем высоту для навигационного контейнера */
 }
 
 /* Стиль для активной ссылки */
@@ -27,32 +25,46 @@ body{
 }
 
 nav {
-    display: flex; /* Делаем навигацию горизонтальной */
-    justify-content: center; /* Центрирование для всех ссылок внутри nav */
-    width: 100%; /* Занимаем 100% ширины navContainer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 nav a{
     color: white;
     text-decoration: none;
-    padding: 10px;
-    margin-right: 30px;
+    padding: 15px;
+    height: 100%;
     transition: background-color 0.3s ease-in-out, color 0.3s;
 }
 
 nav a:hover{
+    color: #ffa500;
     background-color: #444444;
 }
 
+.left-side,
+.right-side {
+    display: flex;
+    align-items: center;
+}
+
 /* Выделяем элемент с классом .home и выравниваем его слева */
-nav .first-row {
-    margin-right: auto; /* Отталкиваем все остальные ссылки вправо */
+nav .left-side {
+    font-size: 2rem;
+    justify-content: flex-start; /* Отталкиваем все остальные ссылки вправо */
+}
+
+.right-side {
+    justify-content: flex-end;
 }
 
 .nav-bars {
     display: none;
     box-sizing: border-box;
-    padding: 1rem;
+    font-size: 2rem;
+    padding: 15px;
     cursor: pointer;
 }
 
@@ -618,6 +630,39 @@ button.next {
 
 
 @media (max-width: 768px) {
+    .left-side {
+        justify-content: flex-start;
+        width: 50%;
+    }
+
+    .right-side {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Располагаем меню непосредственно под навигационной панелью */
+        width: 100%;
+        background-color: #333;
+    }
+
+    .right-side.active {
+        display: flex;
+    }
+
+    .nav-item {
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid #444;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-bars {
+        display: block;
+    }
+
     #about {
         font-size: 1rem; /* Уменьшаем базовый размер шрифта */
         padding: 20px; /* Добавляем паддинг для всего блока */
