@@ -648,7 +648,7 @@ button.next {
 /* MEDIA QUERIES */
 
 /* STYLES FOR MOBILE DEVICEs */
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     .left-side {
         justify-content: flex-start;
         width: 50%;
