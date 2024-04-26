@@ -1,5 +1,13 @@
+/* @Brief: This is a simple CSS file for a personal portfolio website. 
+ * It is a responsive website that includes a navigation bar, about me section, skills section, projects section, interests section, and a contact section
+   Author: Slabik Yaroslav
+   Login: xlsabi01
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+/* COMMON STYLES FOR THE ENTIRE WEBSITE */
 
 body{
     background-color: white;
@@ -10,19 +18,31 @@ body{
     background-color: rgb(246, 246, 244);
 }
 
-#navContainer {
-    position: fixed; /*Элемент будет зафиксирован*/
-    top: 0; /*Верхний край элемента будет прикреплен к верху страницы*/
-    width: 100%; /*Ширина контейнера, чтобы он занимал всю ширину страницы*/
-    background-color: #333; /*Задаем фон, чтобы текст не наезжал на контент при прокрутке*/
-    z-index: 3; /*Устанавливаем z-index, чтобы навигация была поверх других элементов*/
-    padding: 10px 0; /* Добавляем немного отступа слева и справа */
-    height: 5%; /* Задаем высоту для навигационного контейнера */
+section{
+    height: 100vh;
 }
 
-/* Стиль для активной ссылки */
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* NAVIGATION BAR STYLES */
+
+#navContainer {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 3;
+    padding: 10px 0;
+    height: 5%;
+}
+
 #navContainer .active {
-    color: #ffa500; /* или другой стиль, который вы предпочитаете */
+    color: #ffa500; 
 }
 
 nav {
@@ -51,10 +71,9 @@ nav a:hover{
     align-items: center;
 }
 
-/* Выделяем элемент с классом .home и выравниваем его слева */
 nav .left-side {
     font-size: 2rem;
-    justify-content: flex-start; /* Отталкиваем все остальные ссылки вправо */
+    justify-content: flex-start;
 }
 
 .right-side {
@@ -69,22 +88,13 @@ nav .left-side {
     cursor: pointer;
 }
 
-section{
-    height: 100vh;
-}
-
-footer{
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
+/* STYLES FOR THE ABOUT SECTION */
 
 #about {
-    display: flex; /* Используем Flexbox */
-    flex-direction: column; /* Стекаем элементы вертикально */
-    justify-content: center; /* Центрируем содержимое по вертикали */
-    align-items: center; /* Центрируем содержимое по горизонтали */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     font-size: 2rem;
     background-image: url('img/about_bg.jpg');
@@ -99,18 +109,18 @@ footer{
     font-size: 26px;
     font-family: 'Cutive Mono', sans-serif;
     font-weight: bold;
-    max-width: 100%; /* Максимальная ширина текста для лучшего чтения */
+    max-width: 100%;
     margin-bottom: 100px;
 }
 
 #hiddenText {
-    max-width: 80%; /* Максимальная ширина текста для лучшего чтения */
+    max-width: 80%;
 }
 
 .hidden {
     font-size: 1.4rem;
-    opacity: 0; /* Скрыть текст для плавного появления */
-    transition: opacity 1s ease; /* Плавное изменение прозрачности */
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 .hidden a{
@@ -124,60 +134,62 @@ footer{
     transform: translateY(-5px);
 }
 
+/* STYLES FOR THE SKILLS SECTION */
+
 #skills::before {
-    content: ""; /* Убираем текст из содержимого */
-    display: block; /* Делаем элемент блочным для настройки ширины и высоты */
-    margin: 0 auto; /* Центрируем блок по горизонтали */
-    width: 100%; /* Ширина линии, можете настроить под свои нужды */
-    height: 1px; /* Высота линии */
-    background: #333; /* Цвет линии */
-    margin-bottom: 20px; /* Отступ снизу, чтобы отделить от текста раздела */
+    content: ""; 
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    margin-bottom: 20px;
 }
 
 #skills {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Центрирует текст внутри блоков */
+    text-align: center;
     background-image: url('img/skills_bg.jpg');
 }
   
 #skills h2 {
-    margin-bottom: 20px; /* Отступ заголовка от секции навыков */
+    margin-bottom: 20px;
 }
   
 .skills-slider {
-    width: 50%; /* Определяет ширину слайдера */
+    width: 50%;
     height: 70vh;
-    padding: 20px; /* Отступ внутри блока, чтобы контент не прилипал к границам */
-    background: white; /* Фон для слайдера */
-    border-radius: 10px; /* Скругление углов */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень с эффектом размытия */
-    margin-top: 20px; /* Отступ сверху */
-    align-self: center; /* Центрировать слайдер по горизонтали относительно родителя */
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    align-self: center;
     overflow: hidden;
     opacity: 1;
 }
   
 .skills-section {
-    display: none; /* Скрыть секции по умолчанию */
+    display: none;
 }
 
 .skills-section.active {
     display: flex;
-    justify-content: center; /* Центрирование навыков по горизонтали */
+    justify-content: center;
     flex-wrap: wrap;
 }
   
 .skills-section h3 {
-    width: 100%; /* Заставляет заголовок занимать всю ширину, чтобы он был над колонками */
-    margin-bottom: 10px; /* Отступ заголовка от навыков */
+    width: 100%;
+    margin-bottom: 10px;
 }
   
 .skill {
-    width: calc(50% - 10px); /* Расчет ширины каждого навыка с учетом отступов */
-    margin: 5px; /* Отступы вокруг навыка */
-    box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
+    width: calc(50% - 10px);
+    margin: 5px;
+    box-sizing: border-box;
 }
   
 #skills i{
@@ -190,22 +202,22 @@ footer{
 }
 
 .skill p {
-    position: relative; /* для позиционирования абсолютно позиционированных дочерних элементов */
+    position: relative;
     transition: transform 0.5s;
 }
 
 .base-knowledge {
-    position: absolute; /* Абсолютное позиционирование внутри p */
-    right: 0; /* Размещаем в самом правом крае p */
-    white-space: nowrap; /* Чтобы текст не переносился */
-    transform: translateX(100%); /* Начальное положение справа за пределами видимости */
-    opacity: 0; /* Сделать текст полностью прозрачным */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Анимация для перемещения и видимости */
+    position: absolute;
+    right: 0;
+    white-space: nowrap;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .skill:hover .base-knowledge {
-    transform: translateX(0%); /* Возвращаем на видимую часть при наведении */
-    opacity: 1; /* Сделать текст видимым */
+    transform: translateX(0%);
+    opacity: 1;
 }
 
 .skill:hover i, .skill:hover img {
@@ -216,7 +228,7 @@ footer{
     transform: translateX(-30px);
 }
 
-/* Ключевые кадры для анимации вращения */
+/* Animation fot laptops and larger devices */
 @keyframes flip {
     from {
         transform: rotateY(0);
@@ -226,6 +238,7 @@ footer{
     }
 }
 
+/* Animation tor mobile devices */
 @keyframes slideIn {
     from {
         transform: translateY(0);
@@ -235,7 +248,6 @@ footer{
     }
 }
 
-/* Класс для анимации */
 .flip-in {
     animation: flip 0.7s ease-out;
 }
@@ -244,89 +256,91 @@ footer{
     cursor: pointer;
     color: black;
     font-weight: bold;
-    background-color: white; /* Цвет фона кнопки */
-    border: 1px solid #ddd; /* Граница кнопки */
-    padding: 10px 20px; /* Внутренний отступ кнопки */
-    margin-top: 20px; /* Отступ сверху */
-    border-radius: 5px; /* Скругление углов */
-    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Анимация для цвета и фона */
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .toggle:hover {
-    background-color: #ffa500; /* Цвет фона при наведении */
-    color: #495057; /* Цвет текста при наведении */
-    transform: scale(1.1); /* Увеличение размера кнопки при наведении */
+    background-color: #ffa500;
+    color: #495057;
+    transform: scale(1.1);
 }
   
+/* STYLES FOR THE PROJECTS SECTION */
+
 #projects::before {
-    content: ""; /* Убираем текст из содержимого */
-    display: block; /* Делаем элемент блочным для настройки ширины и высоты */
-    margin: 0 auto; /* Центрируем блок по горизонтали */
-    width: 100%; /* Ширина линии, можете настроить под свои нужды */
-    height: 1px; /* Высота линии */
-    background: #333; /* Цвет линии */
-    margin-bottom: 20px; /* Отступ снизу, чтобы отделить от текста раздела */
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    margin-bottom: 20px;
 }
 
 #projects {
-    position: relative; /* Для позиционирования кнопок */
+    position: relative;
     height: auto;
 }
 
 #projects .slider {
-    overflow: hidden; /* Скрываем элементы за пределами слайдера */
+    overflow: hidden;
 }
 
 #projects .slide {
-    display: none; /* Скрыть все слайды */
+    display: none;
     opacity: 0;
-    transition: opacity 0.5s ease; /* Плавная анимация */
+    transition: opacity 0.5s ease;
 }
 
 #projects .slide.active {
-    display: flex;; /* Показать активный слайд */
+    display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Выравнивание содержимого слева */
-    padding: 20px; /* Дополнительный отступ внутри слайда */
+    align-items: flex-start;
+    padding: 20px;
     opacity: 1;
 }
 
 #projects .slide h3 {
-    font-size: 24px; /* Увеличение размера шрифта заголовка */
+    font-size: 24px;
     align-self: flex-start;
-    margin-bottom: 35px; /* Отступ заголовка от описания проекта */
-    transition: color 0.3s ease; /* Анимация для цвета заголовка */
+    margin-bottom: 35px;
+    transition: color 0.3s ease;
 }
 
 #projects .slide:hover h3 {
-    color: #ffa500; /* Цвет заголовка при наведении */
+    color: #ffa500;
 }
 
 #projects .content {
     font-size: 1.2rem;
-    flex-grow: 1; /* Заставляет содержимое занимать всё доступное пространство */
+    flex-grow: 1;
 }
 
 #projects .project-description {
     text-align: left;
-    width: 80%; /* Ограничение ширины описания проекта */
-    margin-bottom: 50px; /* Отступ описания проекта от списка технологий */
+    width: 80%;
+    margin-bottom: 50px;
 }
 
 #projects .technologies-used {
-    align-self: center; /* Выравнивание списка технологий по центру слайда */
+    align-self: center;
     text-align: left;
     width: auto;
-    max-width: 80%; /* Ограничение ширины списка технологий, чтобы он не растягивался на всю ширину */
-    border-top: 1px solid #ccc; /* Линия над использованными технологиями */
-    padding-top: 50px; /* Отступ от линии до текста */
-    transition: color 0.3s ease, transform 0.3s; /* Анимация для цвета и трансформации */
+    max-width: 80%;
+    border-top: 1px solid #ccc;
+    padding-top: 50px;
+    transition: color 0.3s ease, transform 0.3s;
 }
 
 #projects .technologies-used i,
 #projects .technologies-used img {
-    margin-right: 10px; /* Отступ справа для каждого элемента */
-    margin-left: 10px; /* Отступ слева для первого элемента */
+    margin-right: 10px;
+    margin-left: 10px;
     transition: transform 0.5s;
 }
 
@@ -345,15 +359,15 @@ button.next {
     top: 50%;
     transform: translateY(-50%);
     color: black;
-    background-color: rgb(246, 246, 244); /* Цвет фона кнопки */
+    background-color: rgb(246, 246, 244);
     border: none;
     cursor: pointer;
     padding: 10px;
-    transition: color 0.3s ease; /* Анимация для цвета и фона */
+    transition: color 0.3s ease;
 }
 
 #projects button:hover{
-    color: #ffa500; /* Цвет текста кнопки при наведении */
+    color: #ffa500;
 
 }
 
@@ -363,7 +377,7 @@ button.next {
 }
 
 #projects button.next { 
-    right: 20px; /* Отступ справа */
+    right: 20px;
     margin-right: -35px; 
 }
 
@@ -373,12 +387,12 @@ button.next {
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    padding: 10px 0; /* Отступ сверху и снизу для разделения от контента слайдера */
+    padding: 10px 0;
 }
 
 #projects .slide-number {
-    margin: 0 20px; /* Отступы вокруг номера слайда */
-    font-size: 18px; /* Размер шрифта номера слайда */
+    margin: 0 20px;
+    font-size: 18px;
 }
 
 #projects .bellow-text {
@@ -400,14 +414,16 @@ button.next {
     color: #ffa500;
 }
 
+/* STYLES FOR THE INTERESTS SECTION */
+
 #interests::before {
-    content: ""; /* Убираем текст из содержимого */
-    display: block; /* Делаем элемент блочным для настройки ширины и высоты */
-    margin: 0 auto; /* Центрируем блок по горизонтали */
-    width: 100%; /* Ширина линии, можете настроить под свои нужды */
-    height: 1px; /* Высота линии */
-    background: #333; /* Цвет линии */
-    margin-bottom: 20px; /* Отступ снизу, чтобы отделить от текста раздела */
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    margin-bottom: 20px;
 }
 
 #interests {
@@ -420,17 +436,17 @@ button.next {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url('img/brain.webp'); /* Ваше фоновое изображение */
+    background-image: url('img/brain.webp');
     background-size: contain;
     background-position: center;
-    filter: none; /* Изначально без размытия */
-    transition: filter 0.5s ease; /* Плавное добавление размытия */
-    z-index: -1; /* Убедитесь, что фон находится под текстом и элементами */
+    filter: none;
+    transition: filter 0.5s ease;
+    z-index: -1;
 }
 
 #interests.blur .background-blur {
-    filter: blur(5px); /* Применяется размытие */
-    transition: filter 0.5s ease; /* Плавное добавление размытия */
+    filter: blur(5px);
+    transition: filter 0.5s ease;
 }
   
 .brain-quadrant {
@@ -441,8 +457,8 @@ button.next {
 }
 
 .brain-text {
-    font-size: 7rem; /* Или ваш размер */
-    color: black; /* Цвет текста */
+    font-size: 7rem;
+    color: black;
     transition: transform 0.8s ease;
     z-index: 2;
 }
@@ -457,10 +473,10 @@ button.next {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1.7rem; /* Или ваш размер */
+    font-size: 1.7rem;
     font-weight: bold;
     color: black;
-    visibility: hidden; /* Изначально текст невидим */
+    visibility: hidden;
     opacity: 0;
     transition: visibility 0s ease 0s, opacity 0.5s ease;
     z-index: 1;
@@ -471,13 +487,11 @@ button.next {
 #bottom-left { bottom: 0; left: 0; }
 #bottom-right { bottom: 0; right: 0; }
   
-/* Смещение начального текста в углы при наведении */
 #top-left:hover .brain-text { transform: translate(-100%, -100%); }
 #top-right:hover .brain-text { transform: translate(100%, -100%); }
 #bottom-left:hover .brain-text { transform: translate(-100%, 100%); }
 #bottom-right:hover .brain-text { transform: translate(100%, 100%); }
 
-/* Показываем скрытый текст при наведении */
 .brain-quadrant:hover .brain-hidden-text {
     display: flex;
     visibility: visible;
@@ -485,14 +499,16 @@ button.next {
     transition: visibility 0s ease 0s, opacity 0.5s ease;
 }
   
+/* STYLES FOR THE CONTACT SECTION */
+
 #contact::before {
-    content: ""; /* Убираем текст из содержимого */
-    display: block; /* Делаем элемент блочным для настройки ширины и высоты */
-    margin: 0 auto; /* Центрируем блок по горизонтали */
-    width: 100%; /* Ширина линии, можете настроить под свои нужды */
-    height: 1px; /* Высота линии */
-    background: #333; /* Цвет линии */
-    margin-bottom: 20px; /* Отступ снизу, чтобы отделить от текста раздела */
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    margin-bottom: 20px;
 }
 
 #contact {
@@ -512,24 +528,21 @@ button.next {
 
 .contact-form,
 .contact-icons {
-    /* Убедитесь, что оба эти элемента могут уместиться в одном ряду. */
-    flex: 1; /* каждый элемент занимает 1 часть доступного пространства */
+    flex: 1;
 }
 
 .contact-icons {
-    /* выравниваем иконки по правому краю */
     display: flex;
-    justify-content: center; /* выравнивание иконок по правой стороне */
+    justify-content: center;
 }
 
-/* Убедитесь, что у формы и иконок достаточное пространство для соседствования */
 .contact-form {
-    max-width: 50%; /* форма занимает не более 60% ширины родителя */
+    max-width: 50%;
 }
 
 .contact-icons {
-    max-width: 50%; /* иконки занимают не более 40% ширины родителя */
-    flex-wrap: wrap; /* если иконки не умещаются, они перенесутся на новую строку */
+    max-width: 50%;
+    flex-wrap: wrap;
 }
 
 .contact-form label {
@@ -602,7 +615,7 @@ button.next {
 }
 
 #thankyouMessage {
-    display: none; /* Измените на flex когда нужно отобразить сообщение */
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -616,9 +629,9 @@ button.next {
     padding: 15px;
     border: 3px solid #333;
     border-radius: 20px;
-    background-color: #333;
+    background-color: #333; 
     color: white;
-    animation: message 2s ease;
+    animation: message 0.5s ease;
 }
 
 @keyframes message {
@@ -632,7 +645,9 @@ button.next {
      }
 }
 
+/* MEDIA QUERIES */
 
+/* STYLES FOR MOBILE DEVICEs */
 @media (max-width: 767px) {
     .left-side {
         justify-content: flex-start;
@@ -644,7 +659,7 @@ button.next {
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top: 100%; /* Располагаем меню непосредственно под навигационной панелью */
+        top: 100%; 
         width: 100%;
         background-color: #333;
     }
@@ -668,89 +683,85 @@ button.next {
     }
 
     #about {
-        font-size: 1rem; /* Уменьшаем базовый размер шрифта */
-        padding: 20px; /* Добавляем паддинг для всего блока */
+        font-size: 1rem;
+        padding: 20px;
         background-position: center;
     }
 
     #about h2 {
-        font-size: 1.5rem; /* Уменьшаем размер заголовка для мобильных */
+        font-size: 1.5rem;
     }
 
     .typing,
     #hiddenText {
-        font-size: 1rem; /* Уменьшаем размер шрифта для текста */
-        max-width: 100%; /* Позволяем тексту занимать всю ширину блока */
-        margin-bottom: 50px; /* Уменьшаем отступ снизу, чтобы экономить место */
+        font-size: 1rem;
+        max-width: 100%;
+        margin-bottom: 50px;
     }
 
     .skills-slider {
-        width: 100%; /* Для мобильных устройств занимает всю ширину */
-        padding: 0; /* Меньший отступ */
-        margin-top: 0; /* Убираем верхний отступ для мобильных */
-        margin-bottom: 0; /* Убираем нижний отступ для мобильных */
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         overflow: hidden;
     }
   
     .skill {
-        width: calc(50% - 10px); /* Навыки занимают всю ширину на мобильных */
-        margin: 10px 0; /* Устанавливаем вертикальные отступы для мобильных */
+        width: calc(50% - 10px);
+        margin: 10px 0;
     }
   
     .skills-section h3 {
-        font-size: 1.2rem; /* Уменьшаем размер шрифта для заголовков секций */
+        font-size: 1.2rem;
     }
 
-    /* Стили для уменьшения размера иконок и текста в навыках, если нужно */
     #skills i {
-        font-size: 16px; /* Уменьшаем размер иконок */
+        font-size: 16px;
     }
   
     #skills img{
-        width: 16px; /* Уменьшаем размер иконок */
+        width: 16px;
         height: 16px;
     }
 
     .skill p {
-        font-size: 0.9rem; /* Уменьшаем размер текста описания навыка */
+        font-size: 0.9rem;
     }
 
-    /* Убираем анимацию изменения размера, если она есть */
     .skill:hover .base-knowledge {
-        transform: translateY(0); /* Изменяем анимацию для мобильных устройств */
-        opacity: 1; /* Сделать текст видимым */
-        animation: slideIn 0.5s ease forwards; /* Применяем новую анимацию на мобильных устройствах */
+        transform: translateY(0);
+        opacity: 1;
+        animation: slideIn 0.5s ease forwards;
     }
 
     .background-blur {
         background-repeat: no-repeat;
-        background-color: rgb(248, 248, 248);/* rgb(247, 243, 243) */
+        background-color: rgb(248, 248, 248);
     }
 
     .brain-text {
-        font-size: 3rem; /* Уменьшение размера иконок */
+        font-size: 3rem;
     }
 
     .brain-hidden-text {
-        font-size: 1rem; /* Уменьшение размера текста */
-        transform: translate(-50%, -50%); /* Центрирование текста */
-        padding: 10px; /* Добавление отступов для текста */
+        font-size: 1rem;
+        transform: translate(-50%, -50%);
+        padding: 10px;
     }
 
     #top-left .brain-text, 
     #top-right .brain-text {
-        /* Поднимаем верхние иконки немного вверх для лучшего размещения */
         position: absolute;
         top: 45%; 
-        left: 30%;/* Настроить в соответствии с вашим дизайном */
+        left: 30%;
     }
 
     #bottom-left .brain-text, 
     #bottom-right .brain-text {
-        /* Опускаем нижние иконки немного вниз для лучшего размещения */
         position: absolute;
         top: 25%;
-        left: 30%; /* Настроить в соответствии с вашим дизайном */
+        left: 30%;
     }
 
     #top-left:hover .brain-text { transform: translate(-300%, -300%); }
@@ -759,36 +770,37 @@ button.next {
     #bottom-right:hover .brain-text { transform: translate(350%, 350%); }
 
     .contact-content {
-        flex-direction: column; /* Ставим элементы в столбик */
-        align-items: center; /* Центрируем элементы по горизонтали */
+        flex-direction: column;
+        align-items: center;
         padding: 0;
     }
 
     .contact-form,
     .contact-icons {
-        max-width: none; /* Отменяем ограничения по максимальной ширине */
-        flex: none; /* Убираем flex-basis, позволяя элементам занимать необходимое им пространство */
+        max-width: none;
+        flex: none;
     }
 
     .contact-form {
-        width: 80%; /* Форма теперь занимает всю ширину */
+        width: 80%;
     }
 
     .contact-form textarea {
-        width: calc(100% - 10px); /* Вычитаем паддинги */
+        width: calc(100% - 10px);
     }
 
     .contact-icons {
-        padding-top: 20px; /* Добавляем немного места сверху для разделения */
-        justify-content: space-around; /* Равномерно распределяем иконки по горизонтали */
+        padding-top: 20px;
+        justify-content: space-around;
     }
 
     .contact-icons a {
-        font-size: 4rem; /* Уменьшаем размер иконок */
-        padding-left: 20px; /* Убираем левый паддинг */
+        font-size: 4rem;
+        padding-left: 20px;
     }
 }
 
+/* STYLES FOR TABLETS */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .left-side {
         justify-content: flex-start;
@@ -800,7 +812,7 @@ button.next {
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top: 100%; /* Располагаем меню непосредственно под навигационной панелью */
+        top: 100%;
         width: 100%;
         background-color: #333;
     }
@@ -824,87 +836,84 @@ button.next {
     }
 
     #about {
-        font-size: 1rem; /* Уменьшаем базовый размер шрифта */
-        padding: 20px; /* Добавляем паддинг для всего блока */
+        font-size: 1rem;
+        padding: 20px;
         background-position: center;
     }
 
     #about h2 {
-        font-size: 2rem; /* Уменьшаем размер заголовка для мобильных */
+        font-size: 2rem;
     }
 
     .typing,
     #hiddenText {
-        font-size: 1.3rem; /* Уменьшаем размер шрифта для текста */
-        max-width: 100%; /* Позволяем тексту занимать всю ширину блока */
-        margin-bottom: 50px; /* Уменьшаем отступ снизу, чтобы экономить место */
+        font-size: 1.3rem;
+        max-width: 100%;
+        margin-bottom: 50px;
     }
 
     .skills-slider {
-        width: 100%; /* Для мобильных устройств занимает всю ширину */
-        padding: 0; /* Меньший отступ */
-        margin-top: 0; /* Убираем верхний отступ для мобильных */
-        margin-bottom: 0; /* Убираем нижний отступ для мобильных */
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         overflow: hidden;
     }
   
     .skill {
-        width: calc(50% - 10px); /* Навыки занимают всю ширину на мобильных */
-        margin: 10px 0; /* Устанавливаем вертикальные отступы для мобильных */
+        width: calc(50% - 10px);
+        margin: 10px 0;
     }
   
     .skills-section h3 {
-        font-size: 1.5rem; /* Уменьшаем размер шрифта для заголовков секций */
+        font-size: 1.5rem;
     }
 
-    /* Стили для уменьшения размера иконок и текста в навыках, если нужно */
     #skills i {
-        font-size: 30px; /* Уменьшаем размер иконок */
+        font-size: 30px;
     }
 
     #skills img{
-        width: 30px; /* Уменьшаем размер иконок */
+        width: 30px;
         height: 30px;
     }
   
     .skill p {
-        font-size: 1rem; /* Уменьшаем размер текста описания навыка */
+        font-size: 1rem;
     }
 
     .brain-text {
-        font-size: 4rem; /* Уменьшение размера иконок */
+        font-size: 4rem;
     }
 
     .brain-hidden-text {
-        font-size: 1.6rem; /* Уменьшение размера текста */
-        transform: translate(-50%, -50%); /* Центрирование текста */
-        padding: 10px; /* Добавление отступов для текста */
+        font-size: 1.6rem;
+        transform: translate(-50%, -50%);
+        padding: 10px;
     }
 
     #top-left .brain-text {
-        /* Поднимаем верхние иконки немного вверх для лучшего размещения */
         position: absolute;
         top: 35%; 
-        left: 25%;/* Настроить в соответствии с вашим дизайном */
+        left: 25%;
     }
 
     #top-right .brain-text{
         position: absolute;
         top: 35%; 
-        right: 37%;/* Настроить в соответствии с вашим дизайном */
+        right: 37%;
     }
 
     #bottom-left .brain-text {
-        /* Опускаем нижние иконки немного вниз для лучшего размещения */
         position: absolute;
         top: 30%;
-        left: 30%; /* Настроить в соответствии с вашим дизайном */
+        left: 30%;
     }
 
     #bottom-right .brain-text{
         position: absolute;
         top: 30%;
-        right: 38%; /* Настроить в соответствии с вашим дизайном */
+        right: 38%; 
     }
 
     #top-left:hover .brain-text { transform: translate(-400%, -400%); }
@@ -913,102 +922,100 @@ button.next {
     #bottom-right:hover .brain-text { transform: translate(450%, 450%); }
 
     .contact-content {
-        flex-direction: column; /* Ставим элементы в столбик */
-        align-items: center; /* Центрируем элементы по горизонтали */
+        flex-direction: column;
+        align-items: center;
         padding: 0;
     }
 
     .contact-form,
     .contact-icons {
-        max-width: none; /* Отменяем ограничения по максимальной ширине */
-        flex: none; /* Убираем flex-basis, позволяя элементам занимать необходимое им пространство */
+        max-width: none;
+        flex: none;
     }
 
     .contact-form {
-        width: 80%; /* Форма теперь занимает всю ширину */
+        width: 80%;
     }
 
     .contact-form textarea {
-        width: calc(100% - 10px); /* Вычитаем паддинги */
+        width: calc(100% - 10px);
     }
 
     .contact-icons {
-        padding-top: 20px; /* Добавляем немного места сверху для разделения */
-        justify-content: space-around; /* Равномерно распределяем иконки по горизонтали */
+        padding-top: 20px;
+        justify-content: space-around;
     }
 
     .contact-icons a {
-        font-size: 4rem; /* Уменьшаем размер иконок */
-        padding-left: 20px; /* Убираем левый паддинг */
+        font-size: 4rem;
+        padding-left: 20px;
     }
 }
 
+/* STYLES FOR LAPTOPS */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .skills-slider {
-        width: 80%; /* Для мобильных устройств занимает всю ширину */
-        padding: 0; /* Меньший отступ */
-        margin-top: 0; /* Убираем верхний отступ для мобильных */
-        margin-bottom: 0; /* Убираем нижний отступ для мобильных */
+        width: 80%;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         overflow: hidden;
     }
   
     .skill {
-        width: calc(50% - 10px); /* Навыки занимают всю ширину на мобильных */
-        margin: 10px 0; /* Устанавливаем вертикальные отступы для мобильных */
+        width: calc(50% - 10px);
+        margin: 10px 0;
     }
   
     .skills-section h3 {
-        font-size: 1.5rem; /* Уменьшаем размер шрифта для заголовков секций */
+        font-size: 1.5rem;
     }
 
-    /* Стили для уменьшения размера иконок и текста в навыках, если нужно */
     #skills i {
-        font-size: 30px; /* Уменьшаем размер иконок */
+        font-size: 30px;
     }
 
     #skills img {
-        width: 30px; /* Уменьшаем размер иконок */
+        width: 30px;
         height: 30px;
     }
   
     .skill p {
-        font-size: 1rem; /* Уменьшаем размер текста описания навыка */
+        font-size: 1rem;
     }
 
     .brain-text {
-        font-size: 4rem; /* Уменьшение размера иконок */
+        font-size: 4rem;
     }
 
     .brain-hidden-text {
-        font-size: 1.6rem; /* Уменьшение размера текста */
-        transform: translate(-50%, -50%); /* Центрирование текста */
-        padding: 10px; /* Добавление отступов для текста */
+        font-size: 1.6rem;
+        transform: translate(-50%, -50%);
+        padding: 10px; 
     }
 
     #top-left .brain-text {
-        /* Поднимаем верхние иконки немного вверх для лучшего размещения */
         position: absolute;
         top: 35%; 
-        left: 25%;/* Настроить в соответствии с вашим дизайном */
+        left: 25%;
     }
 
     #top-right .brain-text{
         position: absolute;
         top: 35%; 
-        right: 37%;/* Настроить в соответствии с вашим дизайном */
+        right: 37%;
     }
 
     #bottom-left .brain-text {
-        /* Опускаем нижние иконки немного вниз для лучшего размещения */
         position: absolute;
         top: 30%;
-        left: 30%; /* Настроить в соответствии с вашим дизайном */
+        left: 30%;
     }
 
     #bottom-right .brain-text{
         position: absolute;
         top: 30%;
-        right: 38%; /* Настроить в соответствии с вашим дизайном */
+        right: 38%;
     }
 
     #top-left:hover .brain-text { transform: translate(-400%, -400%); }
@@ -1017,32 +1024,32 @@ button.next {
     #bottom-right:hover .brain-text { transform: translate(450%, 450%); }
 
     .contact-content {
-        flex-direction: column; /* Ставим элементы в столбик */
-        align-items: center; /* Центрируем элементы по горизонтали */
+        flex-direction: column;
+        align-items: center;
         padding: 0;
     }
 
     .contact-form,
     .contact-icons {
-        max-width: none; /* Отменяем ограничения по максимальной ширине */
-        flex: none; /* Убираем flex-basis, позволяя элементам занимать необходимое им пространство */
+        max-width: none;
+        flex: none;
     }
 
     .contact-form {
-        width: 80%; /* Форма теперь занимает всю ширину */
+        width: 80%;
     }
 
     .contact-form textarea {
-        width: calc(100% - 10px); /* Вычитаем паддинги */
+        width: calc(100% - 10px);
     }
 
     .contact-icons {
-        padding-top: 20px; /* Добавляем немного места сверху для разделения */
-        justify-content: space-around; /* Равномерно распределяем иконки по горизонтали */
+        padding-top: 20px;
+        justify-content: space-around;
     }
 
     .contact-icons a {
-        font-size: 4rem; /* Уменьшаем размер иконок */
-        padding-left: 20px; /* Убираем левый паддинг */
+        font-size: 4rem;
+        padding-left: 20px;
     }
 }

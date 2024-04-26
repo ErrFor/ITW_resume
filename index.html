@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Own presentation</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,7 +13,7 @@
         <div id="navContainer">
             <nav>
                 <div class="left-side">
-                    <a href="index.html" class="home"><i class="fa-solid fa-house"></i></i></a>
+                    <a href="index.html" class="home"><i class="fa-solid fa-house"></i></a>
                 </div>
                 <div class="right-side">
                     <a class="nav-item" href="#skills">Skills</a>
@@ -42,7 +41,7 @@
                 <br>At the moment I am looking for a job to learn from more experienced colleagues and improve my programming skills, 
                 bring benefits to people using my skills and delve deeper and deeper into the wonderful world of technology!<br>
 
-                <br>Below you can learn more about my <i><a href="#skills">skills</a>, <a href="#interests">interests</a> and <a href="#projects">projects.</i></a> 
+                <br>Below you can learn more about my <i><a href="#skills">skills</a>, <a href="#interests">interests</a> and <a href="#projects">projects.</a></i>
                 If you find my skills useful for you - you can <i><a href="#contact">contact</a></i> me in any way convenient for you.<br>
                 
                 <br>Have a nice day and hope to see you soon!
@@ -184,7 +183,7 @@
                 </p>
             </div>
         </section>
-        <section id="interests" class="brain-container">
+        <section id="interests">
             <div class="background-blur"></div>
             <h2>Interests</h2>
             <div class="brain-quadrant" id="top-left">
@@ -243,91 +242,91 @@
         <p>&copy; 2024 Slabik Yaroslav (xslabi01)</p>
     </footer>
     <script>
-        // При загрузке страницы выполнить функцию
+        // Execute function when the page is loaded
         window.addEventListener('DOMContentLoaded', (event) => {
-            const sections = document.querySelectorAll("section"); // Получаем все секции
-            const navLinks = document.querySelectorAll("nav a"); // Получаем все ссылки в навигации
+            const sections_links = document.querySelectorAll("section"); // Get all sections
+            const navLinks = document.querySelectorAll("nav a"); // Get all navigation links
         
-            // Функция, которая обрабатывает положение скролла и обновляет классы навигационных ссылок
+            // Function to handle scroll position and update navigation link classes
             function onScroll() {
                 let current = "";
         
-                // Проходимся по всем секциям
-                sections.forEach((section) => {
+                // Iterate through each section
+                sections_links.forEach((section) => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.clientHeight;
                     if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                        current = section.getAttribute("id"); // ID текущей секции
+                        current = section.getAttribute("id"); // ID of the current section
                     }
                 });
         
-                // Удаляем класс 'active' у всех ссылок
+                // Remove 'active' class from all links
                 navLinks.forEach((link) => {
                     link.classList.remove("active");
                     if (link.href.includes(current)) {
-                        link.classList.add("active"); // Добавляем класс 'active' ссылке, соответствующей текущей секции
+                        link.classList.add("active"); // Add 'active' class to the link corresponding to the current section
                     }
                 });
             }
         
-            // Обрабатываем событие прокрутки
+            // Handle scroll event
             window.addEventListener("scroll", onScroll);
-        });
 
-        // Текст для эффекта печати
-        const text = "On this page, you can learn more about me and my skills. Enjoy watching it!";
+            // Text for typing effect
+            const text = "On this page, you can learn more about me and my skills. Enjoy watching it!";
+            const textElement = document.getElementById('text'); // Get the element to display the text
+            const hiddenTextElement = document.getElementById('hiddenText'); // Get the hidden element
 
-        // Получаем элемент, куда будет выводиться текст
-        const textElement = document.getElementById('text');
-
-        const hiddenTextElement = document.getElementById('hiddenText'); // Получаем скрытый элемент
-
-        // Функция для добавления текста по одному символу
-        function typeWriter(text, i) {
-            if (i < text.length) {
-                textElement.innerHTML += text.charAt(i);
-                i++;
-                // Задержка перед добавлением следующей буквы
-                setTimeout(function() {
-                    typeWriter(text, i);
-                }, 50);
-            } else {
-                hiddenTextElement.style.opacity = 1; // Показываем текст после завершения анимации
-            }
-        }
-
-        // Инициируем эффект печати
-        typeWriter(text, 0);
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const navHeight = 60; // Высота вашей навигационной панели
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    const targetPosition = window.pageYOffset + targetElement.getBoundingClientRect().top - navHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: "smooth"
-                    });
+            // Function to add text one character at a time
+            function typeWriter(text, i) {
+                if (i < text.length) {
+                    textElement.innerHTML += text.charAt(i);
+                    i++;
+                    // Delay before adding the next letter
+                    setTimeout(function() {
+                        typeWriter(text, i);
+                    }, 50);
+                } else {
+                    hiddenTextElement.style.opacity = 1; // Show text after animation is finished
                 }
-            });
-        });
+            }
 
-        document.addEventListener('DOMContentLoaded', () => {
+            // Start the typing effect
+            typeWriter(text, 0);
+
+            // Attach click event listeners to all anchor links with hashes
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const navHeight = 60; // Height of the navigation bar
+                    const targetId = this.getAttribute('href'); // Get the href attribute of the clicked anchor
+                    const targetElement = document.querySelector(targetId); // Find the target element in the DOM
+
+                    // If the target element exists, scroll to it smoothly
+                    if (targetElement) {
+                        const targetPosition = window.pageYOffset + targetElement.getBoundingClientRect().top - navHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+            
+            // Slider functionality
             let currentSlide = 0;
             const slides = document.querySelectorAll('.slide');
             const totalSlides = slides.length;
             const slideNumberElement = document.querySelector('.slide-number');
 
+            // Function to update the slide number text
             function updateSlideNumber() {
-                slideNumberElement.textContent = `${currentSlide + 1}/${totalSlides}`; // Обновляем номер слайда
+                slideNumberElement.textContent = `${currentSlide + 1}/${totalSlides}`; // Update slide number
             }
-            
+
+            // Navigate to the previous slide
             document.querySelector('.prev').addEventListener('click', () => {
                 slides[currentSlide].classList.remove('active');
                 currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
@@ -335,6 +334,7 @@
                 updateSlideNumber();
             });
 
+            // Navigate to the next slide
             document.querySelector('.next').addEventListener('click', () => {
                 slides[currentSlide].classList.remove('active');
                 currentSlide = (currentSlide + 1) % totalSlides;
@@ -343,74 +343,70 @@
             });
 
             updateSlideNumber();
-            // Показываем первый слайд
-            slides[currentSlide].classList.add('active');
-        });
+            slides[currentSlide].classList.add('active'); // Show first slide
 
-        document.addEventListener('DOMContentLoaded', () => {
+            // Toggle sections on button click
             let currentSectionIndex = 0;
             const sections = document.querySelectorAll('.skills-section');
             const totalSections = sections.length;
             const toggleButton = document.querySelector('.toggle');
             let isInitialLoad = true;
 
+            // Function to toggle between sections
             function toggleSection(index) {
                 sections.forEach((section, idx) => {
                     section.classList.remove('active', 'flip-in');
                     if (idx === index) {
                         section.classList.add('active');
-                        // Добавление анимационного класса к текущей активной секции
+                        // Add animation class to the current active section
                         if (!isInitialLoad) {
                             setTimeout(() => section.classList.add('flip-in'), 25);
                         }
                     }
                 });
             }
-            
+                
             toggleButton.addEventListener('click', () => {
                 currentSectionIndex = (currentSectionIndex + 1) % totalSections;
                 isInitialLoad = false;
                 toggleSection(currentSectionIndex);
-                // Обновление текста кнопки
+                // Update button text
                 toggleButton.textContent = currentSectionIndex === 0 ? 'Soft Skills' : 'Hard Skills';
             });
 
-            // Инициализация первой секции как активной с анимацией
+                // Initialize first section as active with animation
             toggleSection(currentSectionIndex);
-        });
 
-        // JavaScript код
-        document.querySelectorAll('.brain-quadrant').forEach(function(quadrant) {
-            quadrant.addEventListener('mouseenter', function() {
-                document.getElementById('interests').classList.add('blur');
+            // Function for "#interest" section blur effect
+            document.querySelectorAll('.brain-quadrant').forEach(function(quadrant) {
+                quadrant.addEventListener('mouseenter', function() {
+                    document.getElementById('interests').classList.add('blur');
+                });
+                quadrant.addEventListener('mouseleave', function() {
+                    document.getElementById('interests').classList.remove('blur');
+                });
+            }); 
+
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+                var thankYouMessage = document.getElementById('thankyouMessage');
+                thankYouMessage.style.display = 'flex'; // Display thank you message
+                setTimeout(function() {
+                    thankYouMessage.style.display = 'none'; // Hide message after 5 seconds
+                }, 5000);
             });
-            quadrant.addEventListener('mouseleave', function() {
-                document.getElementById('interests').classList.remove('blur');
-            });
-        });
 
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Предотвращаем отправку формы
-            var thankYouMessage = document.getElementById('thankyouMessage');
-            thankYouMessage.style.display = 'flex'; // Показываем благодарственное сообщение
-            setTimeout(function() {
-                thankYouMessage.style.display = 'none'; // Скрываем сообщение через 5 секунд
-            }, 25000);
-        });
-
-        // Убедитесь, что DOM полностью загружен перед привязкой обработчиков
-        document.addEventListener('DOMContentLoaded', function() {
             var navToggle = document.querySelector('.nav-bars');
             var navMenu = document.querySelector('.right-side');
             var content = document.querySelector('main');
 
-            // При клике на гамбургер-иконку меню переключает класс 'active'
+            // Toggle menu class 'active' on hamburger icon click
             navToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
-                // Рассчитываем высоту открытого меню
+                // Calculate the height of the open menu
                 var menuHeight = navMenu.offsetHeight;
 
-                // Если меню стало активным, добавляем паддинг, иначе убираем
+                // Add padding if the menu is active, otherwise remove it
                 if (navMenu.classList.contains('active')) {
                     content.style.paddingTop = menuHeight + 'px';
                 } else {
@@ -418,10 +414,6 @@
                 }
             });
         });
-
-
-
-    </script>
-        
+    </script>      
 </body>
 </html>
