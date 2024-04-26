@@ -135,6 +135,7 @@ footer{
   
 .skills-slider {
     width: 40%; /* Определяет ширину слайдера */
+    height: 70vh;
     padding: 20px; /* Отступ внутри блока, чтобы контент не прилипал к границам */
     background: white; /* Фон для слайдера */
     border-radius: 10px; /* Скругление углов */
@@ -609,12 +610,123 @@ button.next {
 }
 
 
-@media only screen and (max-width: 380px) {
-    
-}
+@media (max-width: 768px) {
+    #about {
+        font-size: 1rem; /* Уменьшаем базовый размер шрифта */
+        padding: 20px; /* Добавляем паддинг для всего блока */
+        /* Другие стили, если нужно */
+    }
 
-@media only screen and (max-width: 768px) {
-    
+    #about h2 {
+        font-size: 1.5rem; /* Уменьшаем размер заголовка для мобильных */
+    }
+
+    .typing,
+    #hiddenText {
+        font-size: 1rem; /* Уменьшаем размер шрифта для текста */
+        max-width: 100%; /* Позволяем тексту занимать всю ширину блока */
+        margin-bottom: 50px; /* Уменьшаем отступ снизу, чтобы экономить место */
+    }
+
+    .hidden {
+        font-size: 1rem; /* Уменьшаем размер шрифта для скрытого текста */
+    }
+
+    .hidden a {
+        font-size: 1rem; /* Уменьшаем размер шрифта для ссылок */
+    }
+
+    .skills-slider {
+        width: 100%; /* Для мобильных устройств занимает всю ширину */
+        height: 70vh; /* Высота автоматически адаптируется под контент */
+        padding: 10px; /* Меньший отступ */
+        margin-top: 0; /* Убираем верхний отступ для мобильных */
+        margin-bottom: 0; /* Убираем нижний отступ для мобильных */
+    }
+  
+    .skill {
+        width: calc(50% - 10px); /* Навыки занимают всю ширину на мобильных */
+        margin: 10px 0; /* Устанавливаем вертикальные отступы для мобильных */
+    }
+  
+    .skills-section h3 {
+        font-size: 1.2rem; /* Уменьшаем размер шрифта для заголовков секций */
+    }
+
+    /* Стили для уменьшения размера иконок и текста в навыках, если нужно */
+    #skills i, #skills img {
+        font-size: 16px; /* Уменьшаем размер иконок */
+    }
+  
+    .skill p {
+        font-size: 0.9rem; /* Уменьшаем размер текста описания навыка */
+    }
+
+    /* Убираем анимацию изменения размера, если она есть */
+    .skill, #skills i, #skills img, .skill p {
+        transition: none;
+    }
+
+    .brain-text {
+        font-size: 3rem; /* Уменьшение размера иконок */
+    }
+
+    .brain-hidden-text {
+        font-size: 1rem; /* Уменьшение размера текста */
+        transform: translate(-50%, -50%); /* Центрирование текста */
+        padding: 10px; /* Добавление отступов для текста */
+    }
+
+    #top-left .brain-text, 
+    #top-right .brain-text {
+        /* Поднимаем верхние иконки немного вверх для лучшего размещения */
+        position: absolute;
+        top: 45%; 
+        left: 30%;/* Настроить в соответствии с вашим дизайном */
+    }
+
+    #bottom-left .brain-text, 
+    #bottom-right .brain-text {
+        /* Опускаем нижние иконки немного вниз для лучшего размещения */
+        position: absolute;
+        top: 25%;
+        left: 30%; /* Настроить в соответствии с вашим дизайном */
+    }
+
+    #top-left:hover .brain-text { transform: translate(-300%, -300%); }
+    #top-right:hover .brain-text { transform: translate(300%, -300%); }
+    #bottom-left:hover .brain-text { transform: translate(-300%, 300%); }
+    #bottom-right:hover .brain-text { transform: translate(300%, 300%); }
+
+    .contact-content {
+        flex-direction: column; /* Ставим элементы в столбик */
+        align-items: center; /* Центрируем элементы по горизонтали */
+        padding: 0;
+    }
+
+    .contact-form,
+    .contact-icons {
+        max-width: none; /* Отменяем ограничения по максимальной ширине */
+        flex: none; /* Убираем flex-basis, позволяя элементам занимать необходимое им пространство */
+    }
+
+    .contact-form {
+        width: 80%; /* Форма теперь занимает всю ширину */
+    }
+
+    .contact-form textarea {
+        width: calc(100% - 10px); /* Вычитаем паддинги */
+    }
+
+    .contact-icons {
+        padding-top: 20px; /* Добавляем немного места сверху для разделения */
+        justify-content: space-around; /* Равномерно распределяем иконки по горизонтали */
+    }
+
+    .contact-icons a {
+        font-size: 4rem; /* Уменьшаем размер иконок */
+        padding-left: 20px; /* Убираем левый паддинг */
+    }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 991px) {
