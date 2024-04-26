@@ -390,11 +390,10 @@
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Предотвращаем отправку формы
             var thankYouMessage = document.getElementById('thankyouMessage');
-            thankYouMessage.style.display = 'block'; // Показываем благодарственное сообщение
+            thankYouMessage.style.display = 'flex'; // Показываем благодарственное сообщение
             setTimeout(function() {
                 thankYouMessage.style.display = 'none'; // Скрываем сообщение через 5 секунд
-            }, 5000);
-            // Здесь вы также можете добавить AJAX-запрос для отправки данных формы без перезагрузки страницы
+            }, 25000);
         });
 
 

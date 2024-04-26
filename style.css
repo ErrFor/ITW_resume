@@ -543,6 +543,11 @@ button.next {
     font-weight: bold;
     cursor: pointer;
     align-self: flex-end;
+    transition: transform 0.5s ease;
+}
+
+.contact-form button:hover {
+    transform: scale(1.1);
 }
 
 .contact-form input[type="email"]:focus,
@@ -550,12 +555,26 @@ button.next {
     outline: 2px solid #333;
 }
 
+.contact-icons{
+    display: inline-block;
+}
+
 .contact-icons a {
     font-size: 5rem;
+    padding-left: 100px;
     margin-top: 15px;
     text-decoration: none;
     color: black;
-    display: inline;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-icons i {
+    transition: transform 0.5s;
+}
+
+.contact-icons i:hover {
+    color: #313131;
+    transform: scale(1.5);
 }
 
 #thankyouMessage {
@@ -575,10 +594,33 @@ button.next {
     border-radius: 20px;
     background-color: #333;
     color: white;
-    animation: message 0.5s ease;
+    animation: message 2s ease;
 }
 
 @keyframes message {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    from { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) scale(0.6); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1);
+     }
+}
+
+
+@media only screen and (max-width: 380px) {
+    
+}
+
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
 }
