@@ -177,7 +177,6 @@ footer{
 
 .skill p {
     position: relative; /* для позиционирования абсолютно позиционированных дочерних элементов */
-    overflow: hidden; /* скрыть любые дочерние элементы, выходящие за границы */
     transition: transform 0.5s;
 }
 
@@ -210,6 +209,15 @@ footer{
     }
     to {
         transform: rotateY(360deg);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
     }
 }
 
@@ -662,8 +670,10 @@ button.next {
     }
 
     /* Убираем анимацию изменения размера, если она есть */
-    .skill, #skills i, #skills img, .skill p {
-        transition: none;
+    .skill:hover .base-knowledge {
+        transform: translateY(0); /* Изменяем анимацию для мобильных устройств */
+        opacity: 1; /* Сделать текст видимым */
+        animation: slideIn 0.5s ease forwards; /* Применяем новую анимацию на мобильных устройствах */
     }
 
     .brain-text {
