@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="navContainer">
+            <nav>
+                <div class="first-row">
+                    <a href="index.html" class="home"><i class="fa-solid fa-house"></i></i></a>
+                    <a class="nav-bars"><i class="fa-solid fa-bars"></i></a>
+                </div>
+                <a class="nav-item" href="#skills">Skills</a>
+                <a class="nav-item" href="#projects">Projects</a>
+                <a class="nav-item" href="#interests">Interests</a>
+                <a class="nav-item" href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <div class="top-content">
+                <h2>Hello!</h2>
+                <div id="text" class="typing"></div>
+            </div>
+            <p id="hiddenText" class="hidden">My name is Yaroslav, i am 21 years old. At the moment I am a 3rd year student at the Technical University in Brno at the 
+                <i><a href="https://www.fit.vut.cz/study/program/8450/.en" target="_blank">Faculty of Information Technology</a></i>.<br>
+                <br>I started getting interested in programming at the age of 14, and since then my passion for coding has grown exponentially.
+                At first, I learned programming from textbooks, courses, and solving simple problems, but with the start of my university education, my programming knowledge became much deeper.
+                In university, I gained more practical and theoretical knowledge, improving my programming skills in many languages.
+                Additionally, thanks to the university, my communication skills have improved, and working in a team is not a problem for me.<br>
+
+                <br>At the moment I am looking for a job to learn from more experienced colleagues and improve my programming skills, 
+                bring benefits to people using my skills and delve deeper and deeper into the wonderful world of technology!<br>
+
+                <br>Below you can learn more about my <i><a href="#skills">skills</a>, <a href="#interests">interests</a> and <a href="#projects">projects.</i></a> 
+                If you find my skills useful for you - you can <i><a href="#contact">contact</a></i> me in any way convenient for you.<br>
+                
+                <br>Have a nice day and hope to see you soon!
+            </p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-slider">
+                <div class="skills-section hard-skills active">
+                    <h3>Hard Skills</h3>
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <p>HTML<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i>
+                        <p>CSS<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <p>JavaScript<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-python"></i>
+                        <p>Python<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <img src="C.png" alt="C" width="20" height="20">
+                        <p>C<span class="base-knowledge">Advanced knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <img src="c_plus.png" alt="C++" width="25" height="25">
+                        <p>C++<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <img src="c_shapr.png" alt="C#" width="20" height="20">
+                        <p>C#<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-php"></i>
+                        <p>PHP<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-linux"></i>
+                        <p>Linux<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-terminal"></i>
+                        <p>Bash<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-database"></i>
+                        <p>SQL<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-code"></i>
+                        <p>Algorithms<span class="base-knowledge">Base knowledge</span></p>
+                    </div>
+                </div>
+                <div class="skills-section soft-skills">
+                    <h3>Soft Skills</h3>
+                    <div class="skill">
+                        <i class="fa-solid fa-users"></i>
+                        <p>Teamwork</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-comments"></i>
+                        <p>Communication</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-list-check"></i>
+                        <p>Responsibility</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <p>Learning ability</p>
+                    </div> 
+                    <div class="skill">
+                        <i class="fa-solid fa-brain"></i>
+                        <p>Logical thinking</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <p>Critical thinking</p>
+                    </div>
+                </div>
+            </div>
+            <button class="toggle">Soft Skills</button>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="slider">
+                <div class="slide active">
+                    <h3>Parser & Interpreter</h3>
+                    <div class="content">
+                        <p class="project-description">
+                            The project was divided into 2 parts: Part 1 - writing a parser in Python that takes input in a special language called IPP-code24 and converts it into XML format. Part 2 - writing an interpreter in PHP that takes an XML file generated by the parser as input and executes the commands described in the XML file.<br>
+                            <br> The project was completed as part of the IPP (Principles of Programming Languages) course in the second semester of the third year.
+                        </p>
+                        <p class="technologies-used">
+                            Used technologies: <i class ="fab fa-python"></i>|<i class ="fab fa-php"></i>|<img src="xml.jpg" alt="XML" width="20" height="20">
+                        </p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <h3>Website for a pub</h3>
+                    <div class="content">
+                        <p class="project-description">
+                            The goal of the project was to create a website for a pub, without modifying the provided HTML code. All changes had to be made using CSS.
+                            The website includes several sections, such as a menu, a list of employees, video interviews with the pub owner, and a table reservation form.<br>
+                            <br>The project was completed as part of the ITW (Web Design) course in the second semester of the third year.
+                        </p>
+                        <p class="technologies-used">
+                            Used technologies: <i class ="fab fa-html5"></i>|<i class ="fab fa-css3-alt"></i>|<i class ="fab fa-js"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <h3>Remote calculator client</h3>
+                    <div class="content">
+                        <p class="project-description">
+                            The project is a client-server application that allows the user to send mathematical expressions to the server, which evaluates them and sends back the result. 
+                            The client and server communicate using the TCP/UDP protocol.<br>
+                            <br>The project was completed as part of the IPK (Computer Communications and Networks) course in the second semester of the second year.
+                        </p>
+                        <p class="technologies-used">
+                            Used technologies: <img src = "c_plus.png" alt = "C++" width = "25" height = "25">|<img src="make.png" alt="Make" width="20" height="20">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <span class="slide-number">1/3</span> <!-- Место для номера слайда -->
+                <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="bellow-text">
+                <p>More of my projects can be found on my <a href="https://github.com/ErrFor" target="_blank">GitHub<i class="fa-brands fa-github"></i></a> page.
+                </p>
+            </div>
+        </section>
+        <section id="interests" class="brain-container">
+            <div class="background-blur"></div>
+            <h2>Interests</h2>
+            <div class="brain-quadrant" id="top-left">
+              <p class="brain-text"><i class="fa-solid fa-gamepad"></i></p>
+              <p class="brain-hidden-text">
+                I like to play video games in my free time. I have been playing games since I was 3 years old and after 18 years, I still enjoy it.
+                One of my dreams is to create my own game. I have already tried to create some simple 2D platforming games using Unity, 
+                but I want to create something more complex and interesting.
+              </p>
+            </div>
+            <div class="brain-quadrant" id="top-right">
+              <p class="brain-text"><i class="fa-solid fa-film"></i></p>
+              <p class="brain-hidden-text">
+                I like movies as much as I like games. I like watch movies of different genres, but my favorite genre is triller. 
+                My favorite movie is "Fight Club" directed by David Fincher, which is also one of my favorite directors. 
+              </p>
+            </div>
+            <div class="brain-quadrant" id="bottom-left">
+              <p class="brain-text"><i class="fa-regular fa-futbol"></i></p>
+              <p class="brain-hidden-text">
+                I haven't played football since I was 14, but I still like to watch football matches. My favorite part of football is coaching. 
+                I like to analyze the game, tactics, and strategies that different coaches invent to make their team win. My favorite coach is Johan Cruyff, who has made a huge impact on football.
+              </p>
+            </div>
+            <div class="brain-quadrant" id="bottom-right">
+              <p class="brain-text"><i class="fa-solid fa-clock-rotate-left"></i></p>
+              <p class="brain-hidden-text">
+                I like history. I have always been interested in what and how things happened in the past. 
+                I often enjoy watching videos that discuss different historical events and the personalities responsible for these events.
+              </p>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm" action="send.php" method="post">
+                        <label for="email">Email:</label>
+                        <br><input type="email" id="email" name="email" required><br>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                <div class="contact-icons">
+                    <a href="https://t.me/Err_For" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://discordapp.com/users/515602339093020673" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            <div id="thankyouMessage" class="hidden">
+                Thank you, I will respond to you soon!
+            </div>
+        </section>        
+    </main>
+    <footer>
+        <p>&copy; 2024 Slabik Yaroslav (xslabi01)</p>
+    </footer>
+    <script>
+        // При загрузке страницы выполнить функцию
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll("section"); // Получаем все секции
+            const navLinks = document.querySelectorAll("nav a"); // Получаем все ссылки в навигации
+        
+            // Функция, которая обрабатывает положение скролла и обновляет классы навигационных ссылок
+            function onScroll() {
+                let current = "";
+        
+                // Проходимся по всем секциям
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute("id"); // ID текущей секции
+                    }
+                });
+        
+                // Удаляем класс 'active' у всех ссылок
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.href.includes(current)) {
+                        link.classList.add("active"); // Добавляем класс 'active' ссылке, соответствующей текущей секции
+                    }
+                });
+            }
+        
+            // Обрабатываем событие прокрутки
+            window.addEventListener("scroll", onScroll);
+        });
+
+        // Текст для эффекта печати
+        const text = "On this page, you can learn more about me and my skills. Enjoy watching it!";
+
+        // Получаем элемент, куда будет выводиться текст
+        const textElement = document.getElementById('text');
+
+        const hiddenTextElement = document.getElementById('hiddenText'); // Получаем скрытый элемент
+
+        // Функция для добавления текста по одному символу
+        function typeWriter(text, i) {
+            if (i < text.length) {
+                textElement.innerHTML += text.charAt(i);
+                i++;
+                // Задержка перед добавлением следующей буквы
+                setTimeout(function() {
+                    typeWriter(text, i);
+                }, 50);
+            } else {
+                hiddenTextElement.style.opacity = 1; // Показываем текст после завершения анимации
+            }
+        }
+
+        // Инициируем эффект печати
+        typeWriter(text, 0);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const navHeight = 60; // Высота вашей навигационной панели
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const targetPosition = window.pageYOffset + targetElement.getBoundingClientRect().top - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            const slideNumberElement = document.querySelector('.slide-number');
+
+            function updateSlideNumber() {
+                slideNumberElement.textContent = `${currentSlide + 1}/${totalSlides}`; // Обновляем номер слайда
+            }
+            
+            document.querySelector('.prev').addEventListener('click', () => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                slides[currentSlide].classList.add('active');
+                updateSlideNumber();
+            });
+
+            document.querySelector('.next').addEventListener('click', () => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % totalSlides;
+                slides[currentSlide].classList.add('active');
+                updateSlideNumber();
+            });
+
+            updateSlideNumber();
+            // Показываем первый слайд
+            slides[currentSlide].classList.add('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentSectionIndex = 0;
+            const sections = document.querySelectorAll('.skills-section');
+            const totalSections = sections.length;
+            const toggleButton = document.querySelector('.toggle');
+            let isInitialLoad = true;
+
+            function toggleSection(index) {
+                sections.forEach((section, idx) => {
+                    section.classList.remove('active', 'flip-in');
+                    if (idx === index) {
+                        section.classList.add('active');
+                        // Добавление анимационного класса к текущей активной секции
+                        if (!isInitialLoad) {
+                            setTimeout(() => section.classList.add('flip-in'), 25);
+                        }
+                    }
+                });
+            }
+            
+            toggleButton.addEventListener('click', () => {
+                currentSectionIndex = (currentSectionIndex + 1) % totalSections;
+                isInitialLoad = false;
+                toggleSection(currentSectionIndex);
+                // Обновление текста кнопки
+                toggleButton.textContent = currentSectionIndex === 0 ? 'Soft Skills' : 'Hard Skills';
+            });
+
+            // Инициализация первой секции как активной с анимацией
+            toggleSection(currentSectionIndex);
+        });
+
+        // JavaScript код
+        document.querySelectorAll('.brain-quadrant').forEach(function(quadrant) {
+            quadrant.addEventListener('mouseenter', function() {
+                document.getElementById('interests').classList.add('blur');
+            });
+            quadrant.addEventListener('mouseleave', function() {
+                document.getElementById('interests').classList.remove('blur');
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем отправку формы
+            var thankYouMessage = document.getElementById('thankyouMessage');
+            thankYouMessage.style.display = 'block'; // Показываем благодарственное сообщение
+            setTimeout(function() {
+                thankYouMessage.style.display = 'none'; // Скрываем сообщение через 5 секунд
+            }, 5000);
+            // Здесь вы также можете добавить AJAX-запрос для отправки данных формы без перезагрузки страницы
+        });
+
+
+    </script>
+        
+</body>
+</html>
