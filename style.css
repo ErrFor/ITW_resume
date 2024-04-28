@@ -19,7 +19,7 @@ body{
 }
 
 section{
-    height: 100vh;
+    min-height: 100vh;
 }
 
 footer{
@@ -95,9 +95,9 @@ nav .left-side {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     font-size: 2rem;
     background-image: url('img/about_bg.jpg');
+    padding: 50px 20px;
 }
 
 #about h2{
@@ -110,7 +110,7 @@ nav .left-side {
     font-family: 'Cutive Mono', sans-serif;
     font-weight: bold;
     max-width: 100%;
-    margin-bottom: 100px;
+    margin: 0 auto 50px;
 }
 
 #hiddenText {
@@ -160,7 +160,7 @@ nav .left-side {
   
 .skills-slider {
     width: 50%;
-    height: 70vh;
+    height: auto;
     padding: 20px;
     background: white;
     border-radius: 10px;
@@ -745,7 +745,7 @@ button.next {
     }
 
     .brain-hidden-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
         transform: translate(-50%, -50%);
         padding: 10px;
     }
@@ -853,7 +853,7 @@ button.next {
     }
 
     .skills-slider {
-        width: 100%;
+        width: 90%;
         padding: 0;
         margin-top: 0;
         margin-bottom: 0;
@@ -866,16 +866,16 @@ button.next {
     }
   
     .skills-section h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     #skills i {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     #skills img{
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
   
     .skill p {
@@ -887,7 +887,7 @@ button.next {
     }
 
     .brain-hidden-text {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         transform: translate(-50%, -50%);
         padding: 10px;
     }
