@@ -86,6 +86,7 @@ nav .left-side {
     font-size: 2rem;
     padding: 15px;
     cursor: pointer;
+    align-items: center;
 }
 
 /* STYLES FOR THE ABOUT SECTION */
@@ -160,7 +161,8 @@ nav .left-side {
   
 .skills-slider {
     width: 50%;
-    height: auto;
+    min-height: 70vh;
+    max-height: auto;
     padding: 20px;
     background: white;
     border-radius: 10px;
@@ -679,12 +681,12 @@ button.next {
     }
 
     .nav-bars {
-        display: block;
+        display: flex;
     }
 
     #about {
         font-size: 1rem;
-        padding: 20px;
+        padding: 40px;
         background-position: center;
     }
 
@@ -832,7 +834,7 @@ button.next {
     }
 
     .nav-bars {
-        display: block;
+        display: flex;
     }
 
     #about {
