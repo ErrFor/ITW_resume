@@ -221,7 +221,7 @@
             <h2>Contact</h2>
             <div class="contact-content">
                 <div class="contact-form">
-                    <form id="contactForm" action="send.php" method="post">
+                    <form id="contactForm" action="https://formspree.io/f/mdknnare" method="post">
                         <label for="email">Email:</label>
                         <br><input type="email" id="email" name="email" required><br>
                         <label for="message">Message:</label>
@@ -390,11 +390,35 @@
 
             document.getElementById('contactForm').addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent form submission
-                var thankYouMessage = document.getElementById('thankyouMessage');
-                thankYouMessage.style.display = 'flex'; // Display thank you message
-                setTimeout(function() {
-                    thankYouMessage.style.display = 'none'; // Hide message after 5 seconds
-                }, 5000);
+
+                const form = event.target;
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.ok) {
+                        var thankYouMessage = document.getElementById('thankyouMessage');
+                        thankYouMessage.style.display = 'flex'; // Display thank you message
+                        setTimeout(function() {
+                            thankYouMessage.style.display = 'none'; // Hide message after 5 seconds
+                        }, 5000);
+                        form.reset(); // Clear the form
+                    } else {
+                        console.error('Server response was not "success":', result);
+                        alert("There was an error sending your message1. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("There was an error sending your message. Please try again.");
+                });
             });
 
             var navToggle = document.querySelector('.nav-bars');
